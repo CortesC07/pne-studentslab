@@ -1,20 +1,21 @@
-from P00.Seq0 import seq_reverse, seq_read_fasta
 from pathlib import Path
+from P00.Seq0 import seq_reverse, seq_read_fasta
 
-U5 = "../sequences/U5.txt"
-ADA = "../sequences/ADA.txt"
-FRAT1 = "../sequences/FRAT1.txt"
-FXN = "../sequences/FXN.txt"
+U5 = "../S04/sequences/U5.txt"
+ADA = "../S04/sequences/ADA.txt"
+FRAT1 = "../S04/sequences/FRAT1.txt"
+FXN = "../S04/sequences/FXN.txt"
 
-cleanU5 = seq_read_fasta(U5)
-cleanADA = seq_read_fasta(ADA)
-cleanFRAT1 = seq_read_fasta(FRAT1)
-cleanFXN = seq_read_fasta(FXN)
+
+cleanU5 = seq_read_fasta(Path(U5).read_text())
+cleanADA = seq_read_fasta(Path(ADA).read_text())
+cleanFRAT1 = seq_read_fasta(Path(FRAT1).read_text())
+cleanFXN = seq_read_fasta(Path(FXN).read_text())
 
 gene_names = ["U5", "ADA", "FRAT1", "FXN"]
 gene_sequences = [cleanU5, cleanADA, cleanFRAT1, cleanFXN]
 
-print("EX 6:")
+print("------| Exercise 6 |------")
 for i in range(len(gene_names)):
     reverse = seq_reverse(gene_sequences[i], 20)
     print(f"Gene {gene_names[i]}:")

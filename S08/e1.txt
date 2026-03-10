@@ -1,0 +1,3 @@
+#Iphone IP 10.8.50.109
+info = "mobile , wifi, Mar 3rd, lab, 10.8.50.109"
+pc = "lab computer , wifi, Mar 3rd, lab, 212.128.255.87 "
